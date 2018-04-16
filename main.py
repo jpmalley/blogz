@@ -32,16 +32,25 @@ def valid_body(body):
     else:
         return ''
 
-@app.route('/blog', methods=['POST', 'GET'])
+@app.route('/blog')
 def blog():
 
-    posts = Blog.query.all()
+    post_id = request.args.get("id")
 
+    if post_id:
+        single_post = Blog.query.filter_by(id=post_id).first()
+        if single_post:
+            return render_template('singlepost.html', title=single_post.title, post=single_post)
+        else:
+            flash('That post does not exist!')
+            posts = Blog.query.all()
+            return render_template('blog.html', title="All Blog Posts", posts=posts)
+
+    posts = Blog.query.all()
     return render_template('blog.html', title="All Blog Posts", posts=posts)
 
 @app.route('/newpost', methods=['POST', 'GET'])
 def newpost():
-
 
     if request.method == 'POST':
         title = request.form['title']
@@ -54,7 +63,10 @@ def newpost():
             new_post = Blog(title, body)
             db.session.add(new_post)
             db.session.commit()
-            return redirect('/blog')
+            post = Blog.query.filter_by(title=title).first()
+            post_id = post.id
+            post_url = '/blog?id=' + str(post_id)
+            return redirect(post_url)
 
         else:
             return render_template('newpost.html', title="Add a New Post", post_title=title, title_error=title_error, body=body, body_error=body_error)
