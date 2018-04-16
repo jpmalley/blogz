@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h1>{{post.title}}</h1>
-<p>{{post.body}}</p>
+<main>
+    <article>
+        <h1>{{post.title}}</h1>
+        <section>
+            <p>{{post.body}}</p>
+        </section>
+    </article>
+</main>
 
 {% endblock %}

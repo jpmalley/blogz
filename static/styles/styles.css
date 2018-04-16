@@ -1,0 +1,183 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* -------------------------------- */
+/* Global Styles */
+/* -------------------------------- */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(240, 240, 240);
+    margin: 0;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* -------------------------------- */
+/* Navigation Styles */
+/* -------------------------------- */
+
+#nav {
+    background-color: rgb(216, 216, 216);
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(216, 216, 216);
+    text-align: left;
+    max-width: 1000px;
+}
+
+nav ul li {
+    display: inline-block;
+    max-width: 100%;
+}
+
+nav ul li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: orange;
+    color: white;
+}
+
+
+/* -------------------------------- */
+/* Content Styles */
+/* -------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+    font-size: 2.2em;
+    margin: 1.2em 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 2%;
+}
+
+h2 > a {
+    text-decoration: none;
+    color: orange
+}
+
+h2 > a:hover {
+    text-decoration: underline;
+    color: orange
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    line-height: 1.7em;
+}
+
+section {
+    background-color: white;
+    margin: 1.8em 0;
+    padding: 1.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* -------------------------------- */
+/* Form Styles */
+/* -------------------------------- */
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: orange;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(231, 150, 0);
+}

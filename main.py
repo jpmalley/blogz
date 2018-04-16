@@ -44,10 +44,10 @@ def blog():
         else:
             flash('That post does not exist!')
             posts = Blog.query.all()
-            return render_template('blog.html', title="All Blog Posts", posts=posts)
+            return render_template('blog.html', title="Build-a-Blog", posts=posts)
 
     posts = Blog.query.all()
-    return render_template('blog.html', title="All Blog Posts", posts=posts)
+    return render_template('blog.html', title="Build-a-Blog", posts=posts)
 
 @app.route('/newpost', methods=['POST', 'GET'])
 def newpost():
