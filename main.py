@@ -46,7 +46,7 @@ def blog():
             posts = Blog.query.all()
             return render_template('blog.html', title="Build-a-Blog", posts=posts)
 
-    posts = Blog.query.all()
+    posts = Blog.query.order_by(Blog.id.desc()).all()
     return render_template('blog.html', title="Build-a-Blog", posts=posts)
 
 @app.route('/newpost', methods=['POST', 'GET'])
