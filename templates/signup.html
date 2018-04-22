@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Register to Blogz!</h1>
+
+<div class="form-style">
+    <form action="/signup" method="post">
+        <label for="username">Username
+            <input name="username" type="text" value="{{ username }}">
+        </label>
+        <label for="password">Password
+            <input name="password" type="password">
+        </label>
+        <label for="verify">Verify Password
+            <input name="verify" type="password">
+        </label>
+        <input type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="/login">Login</a> here.</p>
+</div>
+
+{% endblock %}

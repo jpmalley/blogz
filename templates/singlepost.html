@@ -1,12 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<main>
-    <article>
-        <h1>{{post.title}}</h1>
-        <section>
-            <p>{{post.body}}</p>
-        </section>
-    </article>
-</main>
+
+    <h1>{{post.title}}</h1>
+    <h3 class="author">by {{owner_name}}</h3>
+    <section>
+        <p>{{post.body}}</p>
+    </section>
 
 {% endblock %}

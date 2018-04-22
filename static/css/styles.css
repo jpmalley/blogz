@@ -85,11 +85,13 @@ nav ul {
     background-color: rgb(216, 216, 216);
     text-align: left;
     max-width: 1000px;
+    vertical-align: middle;
 }
 
 nav ul li {
     display: inline-block;
     max-width: 100%;
+    vertical-align: middle;
 }
 
 nav ul li a {
@@ -105,6 +107,45 @@ nav ul li a:hover {
     color: white;
 }
 
+nav ul li.right-align {
+    float: right;
+}
+
+nav ul li.username a {
+    background-color: rgb(216, 216, 216);
+    pointer-events: none;
+    cursor: default;
+    color: rgb(100, 100, 100);
+}
+
+nav ul li.username a:hover {
+    background-color: rgb(216, 216, 216);
+    color: rgb(100, 100, 100);
+}
+
+/* -------------------------------- */
+/* Flash Message Styles */
+/* -------------------------------- */
+
+ul.flash {
+    width: 100%;
+    list-style-type: none;
+}
+
+ul.flash li {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    color: white;
+}
+
+ul.flash li.error {
+    background-color: red;
+}
+
+ul.flash li.success {
+    background-color: green;
+}
 
 /* -------------------------------- */
 /* Content Styles */
@@ -136,6 +177,13 @@ h2 > a:hover {
     color: orange
 }
 
+h3 {
+    font-size: 1em;
+    text-align: center;
+    color: gray;
+    font-style: italic;
+}
+
 p {
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
@@ -150,14 +198,17 @@ section {
     border-radius: 4px;
 }
 
+a {
+    color: orange;
+}
 
 /* -------------------------------- */
 /* Form Styles */
 /* -------------------------------- */
 
-input[type=text], textarea {
+input[type=text], input[type=password], input[type=password], textarea {
     width: 100%;
-    padding: 12px 20px;
+    padding: 12px 12px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -182,3 +233,17 @@ input[type=submit]:hover {
     background-color: rgb(231, 150, 0);
 }
 
+div.form-style {
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+div.form-style > p {
+    text-align: center;
+    font-size: .8em;
+    color: rgb(112, 112, 112)
+}
+
+input[type=submit].logout {
+    padding: 4px 10px;
+}

@@ -5,7 +5,7 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styles.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
     <style>
-        .error {
+        .error-text {
             color: red;
         }
     </style>
@@ -14,22 +14,38 @@
     <div id="nav" class="nav-content-wrapper">
         <nav>
             <ul>
-                <li><a href="/blog">Main Blog Page</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
                 <li><a href="/newpost">New Post</a></li>
+                {% if 'user' in session %}
+                <li class="right-align">
+                    <form action="/logout" method="post">
+                        <input class="logout" type="submit" value="Log Out" />
+                    </form>
+                </li>
+                <li class="right-align username"><a href="">Welcome, {{ session['user'] }}!</a></li>
+                {% else %}
+                    <li class="right-align"><a href="/login">Login</a></li>
+                    <li class="right-align"><a href="/signup">Signup</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>
 
     {% with messages = get_flashed_messages(with_categories=True) %}
-        <ul>
+        <ul class="flash">
         {% for category,message in messages %}
             <li class="{{category}}">{{message}}</li>
         {% endfor %}
         </ul>
     {% endwith %}
-
-    {% block content %}
-    {% endblock %}
+   
+    <main>
+        <article>
+            {% block content %}
+            {% endblock %}
+        </article>
+    </main>
 
 </body>
 </html>

@@ -1,19 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-<main>
-    <article>
-        <h1>{{title}}</h1>
-        {% if posts|length == 0 %}
-            <section><p>No posts yet</p></section>
-        {% else %}
-            {% for post in posts %}
-            <section>
-                <h2><a href="/blog?id={{post.id}}">{{post.title}}</a></h2>
-                <p>{{post.body}}</p>
-            </section>
-            {% endfor %}
-        {% endif %}
-    </article>
-</main>
+
+<h1>{{title}}</h1>
+{% if posts|length == 0 %}
+    <section><p>No posts yet</p></section>
+{% else %}
+    {% for post in posts %}
+    <section>
+        <h2><a href="/blog?id={{post.id}}">{{post.title}}</a></h2>
+        <p>{{post.body}}</p>
+    </section>
+    {% endfor %}
+{% endif %}
 
 {% endblock %}
