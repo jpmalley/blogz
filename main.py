@@ -114,17 +114,21 @@ def blog():
         single_post = Blog.query.filter_by(id=post_id).first()
         if single_post:
             owner = User.query.filter_by(id=single_post.owner_id).first()
-            owner_name = owner.username
-            print(owner)
-            print(owner_name)
-            return render_template('singlepost.html', title=single_post.title, post=single_post, owner_name=owner_name)
+            author = owner.username
+            return render_template('singlepost.html', title=single_post.title, post=single_post, author=author)
         else:
-            flash('That post does not exist!')
-            posts = Blog.query.all()
-            return render_template('blog.html', title="Build-a-Blog", posts=posts)
+            flash('That post does not exist!', 'error')
+
+    author = request.args.get("userid")
+    
+    if author:
+        author_id = User.query.filter_by(username=author).first()
+        owner_id = author_id.id
+        posts = Blog.query.filter_by(owner_id=owner_id).order_by(Blog.id.desc()).all()
+        return render_template('blog.html', title=author + "'s Posts", posts=posts)
 
     posts = Blog.query.order_by(Blog.id.desc()).all()
-    return render_template('blog.html', title="Build-a-Blog", posts=posts)
+    return render_template('blog.html', title="Blogz", posts=posts)
 
 @app.route('/newpost', methods=['POST', 'GET'])
 def newpost():
@@ -150,6 +154,12 @@ def newpost():
             return render_template('newpost.html', title="Add a New Post", post_title=title, title_error=title_error, body=body, body_error=body_error)
 
     return render_template('newpost.html', title="Add a New Post")
+
+@app.route('/')
+def index():
+
+    authors = User.query.order_by(User.username).all()
+    return render_template('index.html', title="Authors", authors=authors)
 
 if __name__ == '__main__':
     app.run()

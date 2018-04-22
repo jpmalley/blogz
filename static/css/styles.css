@@ -177,7 +177,7 @@ h2 > a:hover {
     color: orange
 }
 
-h3 {
+h3.author {
     font-size: 1em;
     text-align: center;
     color: gray;
@@ -190,6 +190,17 @@ p {
     line-height: 1.7em;
 }
 
+p.author {
+    font-size: .8em;
+    color: gray;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+a {
+    color: orange;
+}
+
 section {
     background-color: white;
     margin: 1.8em 0;
@@ -198,8 +209,22 @@ section {
     border-radius: 4px;
 }
 
-a {
-    color: orange;
+.authors-list {
+    background-color: white;
+    margin: 1.8em 0;
+    padding: 1.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.authors-list ul li {
+    margin-bottom: 6px;
+}
+
+.authors-list ul li:last-child {
+    margin-bottom: 0;
 }
 
 /* -------------------------------- */

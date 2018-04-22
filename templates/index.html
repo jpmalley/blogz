@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>{{title}}</h1>
+{% if authors|length == 0 %}
+    <section class="authors-list"><p>No authors yet</p></section>
+{% else %}
+    <section class="authors-list">
+        <ul>
+        {% for author in authors %}
+            <li><a href="/blog?userid={{author.username}}">{{author.username}}</a></li>
+        {% endfor %}
+        </ul>
+    </section>
+{% endif %}
+
+{% endblock %}
