@@ -232,6 +232,8 @@ section {
 /* -------------------------------- */
 
 input[type=text], input[type=password], input[type=password], textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .9em;
     width: 100%;
     padding: 12px 12px;
     margin: 8px 0;
