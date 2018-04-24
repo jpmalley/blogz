@@ -105,6 +105,7 @@ nav ul li a {
 nav ul li a:hover {
     background-color: orange;
     color: white;
+    text-decoration: none;
 }
 
 nav ul li.right-align {
@@ -167,16 +168,6 @@ h2 {
     margin-bottom: 2%;
 }
 
-h2 > a {
-    text-decoration: none;
-    color: orange
-}
-
-h2 > a:hover {
-    text-decoration: underline;
-    color: orange
-}
-
 h3.author {
     font-size: 1em;
     text-align: center;
@@ -198,7 +189,13 @@ p.author {
 }
 
 a {
-    color: orange;
+    text-decoration: none;
+    color: orange
+}
+
+a:hover {
+    text-decoration: underline;
+    color: orange
 }
 
 section {

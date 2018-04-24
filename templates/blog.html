@@ -9,7 +9,7 @@
     <section>
         <h2><a href="/blog?id={{post.id}}">{{post.title}}</a></h2>
         <p>{{post.body}}</p>
-        <p class="author">written by <a href="/blog?userid={{post.owner.username}}">{{post.owner.username}}</a></p>
+        <p class="author">written by <a href="/blog?userid={{post.owner.username}}">{{post.owner.username}}</a> on {{post.date_created.strftime("%B %d, %Y at %I:%M %p")}}</p>
     </section>
     {% endfor %}
 {% endif %}
