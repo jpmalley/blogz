@@ -60,7 +60,6 @@ def require_login():
     if request.endpoint not in allowed_routes and 'user' not in session:
         return redirect('/login')
 
-
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
